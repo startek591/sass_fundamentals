@@ -6,6 +6,19 @@
   @return map-get($font-weights, $weight-name);
 }
 
+@mixin theme($light-theme: true) {
+  @if $light-theme {
+    background: lighten($primary-color, 100%);
+    color: darken($text-color, 100%);
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
 @mixin flexCenter($direction) {
   // define styles
   display: flex;
@@ -31,4 +44,12 @@ body {
       color: pink;
     }
   }
+
+  @include mobile {
+    flex-direction: column;
+  }
+}
+
+.light {
+  @include theme($light-theme: true);
 }
