@@ -35,7 +35,7 @@ body {
 
 .main {
   @include flexCenter(column);
-  width: 80%;
+  width: 80% - 40%;
   margin: 0 auto;
   #{&}__paragraph1 {
     font-weight: weight(regular);
